@@ -1,0 +1,8 @@
+{
+    "dependencies": {
+        "ethereumjs-util": "^7.1.5"
+    },
+    "devDependencies": {
+        "typescript": "^4.7.3"
+    }
+}

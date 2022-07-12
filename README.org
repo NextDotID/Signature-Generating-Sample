@@ -1,0 +1,8 @@
+#+TITLE: Samples for generating ethereum personal_sign
+#+AUTHOR: Nyk Ma <nykma@mask.io>, Wei Duan <weiduan@mask.io>
+
+Here's samples of how to generate / validate Ethereum =personal_sign= ([[https://eips.ethereum.org/EIPS/eip-191][EIP-191]]):
+
+- [[file:typescript/src/index.ts][TypeScript]]
+- [[file:go/main.go][Golang]]
+- [[file:rust][Rust]] (WIP)
