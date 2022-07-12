@@ -5,4 +5,4 @@ Here's samples of how to generate / validate Ethereum =personal_sign= ([[https:/
 
 - [[file:typescript/src/index.ts][TypeScript]]
 - [[file:go/main.go][Golang]]
-- [[file:rust][Rust]] (WIP)
+- [[file:rust/src/main.rs][Rust]]
