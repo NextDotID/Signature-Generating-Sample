@@ -41,7 +41,7 @@ func main() {
 	os.Exit(0)
 }
 
-// SignPersonal signs a payload using given secret key.
+// signPersonal signs a payload using given secret key.
 func signPersonal(payload []byte, sk *ecdsa.PrivateKey) (signature []byte, err error) {
 	digest := signPersonalDigest(payload)
 	signature, err = crypto.Sign(digest, sk)
@@ -53,6 +53,8 @@ func signPersonal(payload []byte, sk *ecdsa.PrivateKey) (signature []byte, err e
 }
 
 // signPersonalDigest hashes the given payload with eth.personal.sign struct.
+// NOTE: `len(data)` is byte count, not Unicode codepoint count.
+// i.e.    `len("🐴") == 4`
 func signPersonalDigest(data []byte) []byte {
 	messsage := fmt.Sprintf("\x19Ethereum Signed Message:\n%d%s", len(data), data)
 	return crypto.Keccak256([]byte(messsage))

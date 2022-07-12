@@ -33,7 +33,7 @@ fn main() {
 /// Format and hash message in `personal_sign` format.
 ///
 /// NOTE: `payload.len()` is byte count, not Unicode codepoint count.
-/// i.e.    `"🐴".len() == 3`
+/// i.e.    `"🐴".len() == 4`
 fn personal_sign_digest(payload: &str) -> [u8; 32] {
     let personal_message = format!("\x19Ethereum Signed Message:\n{}{}", payload.len(), payload);
 
