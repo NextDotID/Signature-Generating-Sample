@@ -67,8 +67,10 @@ fn personal_sign_recover(sig_r_s_recovery: &Vec<u8>, plain_payload: &str) -> Pub
         .get(64)
         .expect("Signature length is not 65 bytes")
         .clone();
+    // Why?
+    // Good question. See: https://ethereum.stackexchange.com/questions/113499/why-is-value-of-ecdsa-v-often-neither-27-nor-28
     if recovery_id == 27 || recovery_id == 28 {
-        recovery_id = 27;
+        recovery_id -= 27;
     }
     if recovery_id != 0 && recovery_id != 1 {
         panic!("Invalid signature: Recovery ID not recognized.")
